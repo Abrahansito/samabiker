@@ -70,3 +70,12 @@ body {
     border-color: var(--primary-color) !important;
     box-shadow: 0 0 0 2px rgba(215, 31, 39, 0.2) !important;
 }
+
+/* Arreglar botón de cerrar del Sidebar en tema oscuro */
+.p-sidebar-close-icon {
+    color: white !important;
+}
+
+.p-sidebar-close:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
