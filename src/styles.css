@@ -79,3 +79,14 @@ body {
 .p-sidebar-close:hover {
     background: rgba(255, 255, 255, 0.1) !important;
 }
+
+/* src/styles.css */
+
+/* Pinta la X de blanco */
+.p-drawer-close-icon {
+    color: white !important;
+    font-size: 1.5rem; /* Un poco más grande para el dedo */
+}
+
+/* Efecto al tocar la X */
+

@@ -22,15 +22,31 @@
 </nav>
 
 <p-drawer [(visible)]="sidebarVisible" position="right" styleClass="w-full bg-black-alpha-90 text-white">
-    <div class="flex flex-column align-items-center gap-4 mt-6">
-        <span class="font-display text-3xl text-red-600 mb-4">MENÚ</span>
 
-        <a (click)="sidebarVisible=false" routerLink="/" class="text-2xl text-white no-underline font-light">INICIO</a>
-        <a (click)="sidebarVisible=false" routerLink="/catalogo" class="text-2xl text-white no-underline font-light">CATÁLOGO</a>
-        <a (click)="sidebarVisible=false" routerLink="/contacto" class="text-2xl text-white no-underline font-light">CONTACTO</a>
+    <div class="flex flex-column align-items-center justify-content-center h-full gap-5">
 
-        <div class="w-full border-top-1 border-gray-800 my-4"></div>
+        <img src="imagen/Bikerr.png" alt="Sama Bikers" class="h-4rem mb-2">
 
-        <button pButton label="COTIZAR AHORA" class="p-button-danger w-full"></button>
+        <div class="w-4rem border-top-1 border-red-600 mb-2"></div>
+
+        <a (click)="sidebarVisible=false" routerLink="/"
+           class="font-display text-3xl text-white no-underline hover:text-red-500 transition-colors cursor-pointer tracking-wider">
+           INICIO
+        </a>
+
+        <a (click)="sidebarVisible=false" routerLink="/catalogo"
+           class="font-display text-3xl text-white no-underline hover:text-red-500 transition-colors cursor-pointer tracking-wider">
+           CATÁLOGO
+        </a>
+
+        <a (click)="sidebarVisible=false" routerLink="/contacto"
+           class="font-display text-3xl text-white no-underline hover:text-red-500 transition-colors cursor-pointer tracking-wider">
+           CONTACTO
+        </a>
+
+        <button pButton label="COTIZAR AHORA"
+                class="p-button-danger w-9 p-3 text-xl font-bold border-round-3xl mt-4 shadow-4">
+        </button>
+
     </div>
 </p-drawer>
