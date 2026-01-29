@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1IMPORTACIONES DE LIBRERÍAS */
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Racing+Sans+One&display=swap');
+
+/*VARIABLES GLOBALES */
+:root {
+    --primary-color: #D71F27; /* Rojo SAMA */
+    --surface-ground: #0a0a0a; /* Negro profundo */
+    --surface-card: #121212;   /* Gris oscuro */
+    --text-color: #ffffff;
+    --font-family: 'Inter', sans-serif;
+    --font-display: 'Racing Sans One', cursive;
+}
+
+/*RESET BÁSICO */
+body {
+    background-color: var(--surface-ground);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/*UTILIDADES PERSONALIZADAS */
+
+/* Títulos estilo Racing */
+.font-display {
+    font-family: var(--font-display);
+    font-style: italic;
+}
+
+/* Efecto Inclinado (Skew) */
+.skew-box {
+    transform: skew(-15deg);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.unskew-content {
+    transform: skew(15deg);
+    display: inline-block;
+}
+
+/* Glassmorphism (Efecto Vidrio) */
+.glass-effect {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ajustes a Componentes PrimeNG */
+.p-button {
+    font-weight: bold !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Inputs oscuros */
+.p-inputtext {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid #333 !important;
+    color: white !important;
+}
+
+.p-inputtext:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(215, 31, 39, 0.2) !important;
+}

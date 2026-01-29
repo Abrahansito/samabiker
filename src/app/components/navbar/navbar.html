@@ -1,0 +1,36 @@
+<nav class="fixed w-full z-5 top-0 transition-all duration-300 px-4 md:px-6 py-3 flex justify-content-between align-items-center"
+     [ngClass]="{'glass-effect shadow-4': isScrolled, 'bg-transparent': !isScrolled}">
+
+    <a routerLink="/" class="flex align-items-center gap-2 no-underline cursor-pointer">
+        <div class="flex flex-column">
+           <img src="imagen\Bikerr.png" alt="imagen/png" width="100px">
+        </div>
+    </a>
+
+    <div class="hidden md:flex align-items-center gap-5">
+        <a routerLink="/" fragment="home" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">INICIO</a>
+        <a routerLink="/catalogo" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">CATÁLOGO</a>
+        <a routerLink="/contacto" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">CONTACTO</a>
+
+        <button pButton label="COTIZAR AHORA" class="p-button-danger skew-box border-none"></button>
+    </div>
+
+    <button pButton icon="pi pi-bars"
+            class="md:hidden p-button-text p-button-rounded text-white text-2xl"
+            (click)="sidebarVisible = true">
+    </button>
+</nav>
+
+<p-drawer [(visible)]="sidebarVisible" position="right" styleClass="w-full bg-black-alpha-90 text-white">
+    <div class="flex flex-column align-items-center gap-4 mt-6">
+        <span class="font-display text-3xl text-red-600 mb-4">MENÚ</span>
+
+        <a (click)="sidebarVisible=false" routerLink="/" class="text-2xl text-white no-underline font-light">INICIO</a>
+        <a (click)="sidebarVisible=false" routerLink="/catalogo" class="text-2xl text-white no-underline font-light">CATÁLOGO</a>
+        <a (click)="sidebarVisible=false" routerLink="/contacto" class="text-2xl text-white no-underline font-light">CONTACTO</a>
+
+        <div class="w-full border-top-1 border-gray-800 my-4"></div>
+
+        <button pButton label="COTIZAR AHORA" class="p-button-danger w-full"></button>
+    </div>
+</p-drawer>
