@@ -44,4 +44,18 @@ export class Home {
       badge: ''
     }
   ];
+
+  openWhatsApp(product: any) {
+    //Tu número de celular (Código 51 de Perú)
+    const phoneNumber = '51950051321';
+
+    //El mensaje personalizado
+    const message = `Hola SAMA BIKERS, estoy interesado en el producto: *${product.name}* que vi en la web. Quiero que me brindes más info.`;
+
+    //Crear la URL mágica de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    //Abrir en una nueva pestaña
+    window.open(url, '_blank');
+  }
 }

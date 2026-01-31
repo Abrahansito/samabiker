@@ -57,32 +57,48 @@
    <div class="grid mt-6">
 
     <div class="col-6 md:col-3 p-2 md:p-3" *ngFor="let product of products">
+      <div class="product-card p-2 md:p-3 border-round-2xl h-full flex flex-column justify-content-between relative overflow-hidden group cursor-pointer"
+     style="background: #111; border: 1px solid rgba(255,255,255,0.05);">
 
-        <div class="product-card p-3 border-round-2xl h-full flex flex-column justify-content-between relative overflow-hidden group cursor-pointer">
+    <p-tag *ngIf="product.badge" [value]="product.badge" severity="danger"
+           class="absolute top-0 left-0 m-2 z-2 text-xs font-bold shadow-4"></p-tag>
 
-            <p-tag *ngIf="product.badge" [value]="product.badge" severity="danger" class="absolute top-0 left-0 m-2 z-2 font-bold text-xs"></p-tag>
+    <div class="relative w-full h-10rem md:h-15rem mb-2 border-round-xl overflow-hidden flex align-items-center justify-content-center z-1 p-2"
+         style="background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%);">
 
-            <div class="relative w-full h-9rem md:h-14rem mb-2 md:mb-3 border-round-xl overflow-hidden bg-gray-900 flex align-items-center justify-content-center z-1 shadow-2 p-2">
-                <img [src]="product.image" [alt]="product.name" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
-            </div>
+        <img [src]="product.image" [alt]="product.name"
+             class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl">
+    </div>
 
-            <div class="z-1 px-1">
-                <span class="text-gray-500 font-bold uppercase tracking-wider block mb-1" style="font-size: 0.65rem;">{{ product.category }}</span>
+    <div class="z-1 px-1 flex-grow-1 flex flex-column">
+        <span class="text-gray-500 font-bold uppercase tracking-wider block mb-1" style="font-size: 0.6rem;">
+            {{ product.category }}
+        </span>
 
-                <h3 class="text-white text-sm md:text-xl font-medium m-0 line-height-3 mb-2 md:mb-3 hover:text-red-500 transition-colors overflow-hidden text-overflow-ellipsis white-space-nowrap md:white-space-normal">
-                    {{ product.name }}
-                </h3>
-            </div>
+        <h3 class="text-white text-sm md:text-xl font-medium m-0 line-height-3 mb-2 hover:text-red-500 transition-colors"
+            style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 2.8em;">
+            {{ product.name }}
+        </h3>
+    </div>
 
-            <div class="flex align-items-center justify-content-between mt-auto px-1 border-top-1 border-gray-800 pt-2 md:pt-3">
-                <div class="flex flex-column">
-                    <span class="text-lg md:text-2xl font-bold text-white">S/ {{ product.price | number:'1.0-0' }}</span>
-                </div>
-
-                <button pButton icon="pi pi-shopping-cart" class="p-button-rounded p-button-text p-button-sm text-white hover:bg-white hover:text-black transition-all duration-300"></button>
-            </div>
-
+    <div class="flex align-items-end justify-content-between mt-auto px-1 border-top-1 border-gray-800 pt-2">
+        <div class="flex flex-column">
+             <span class="text-xs text-gray-500 line-through mb-1" *ngIf="product.badge === 'OFERTA'">
+                S/ {{ product.price * 1.2 | number:'1.0-0' }}
+            </span>
+            <span class="text-lg md:text-2xl font-bold text-white">
+                S/ {{ product.price | number:'1.0-0' }}
+            </span>
         </div>
+
+        <button pButton icon="pi pi-whatsapp"
+                (click)="openWhatsApp(product)"
+                class="p-button-rounded p-button-outlined p-button-secondary text-white hover:bg-green-500 hover:border-green-500 hover:text-white transition-all duration-300 w-2rem h-2rem md:w-3rem md:h-3rem border-circle">
+        </button>
+    </div>
+</div>
+
+
     </div>
 </div>
 
@@ -90,4 +106,60 @@
         <button pButton label="VER TODO EL CATÁLOGO" routerLink="/catalogo" class="p-button-outlined p-button-danger font-bold px-5 py-3 border-round-3xl hover:scale-105 transition-transform"></button>
     </div>
 
+</section>
+
+<section class="py-6 px-4 z-2 relative border-top-1 border-gray-800" style="background-color: #050505;">
+    <div class="grid text-center">
+
+        <div class="col-12 md:col-4 mb-4 md:mb-0">
+            <div class="flex flex-column align-items-center gap-3">
+                <div class="w-4rem h-4rem border-circle bg-red-900/20 flex align-items-center justify-content-center text-red-500 mb-2 shadow-2">
+                    <i class="pi pi-truck text-2xl"></i>
+                </div>
+                <h3 class="text-white text-lg font-bold m-0">Envíos a todo el Perú</h3>
+                <p class="text-gray-500 m-0 text-sm max-w-18rem">Llegamos a la agencia preferida.</p>
+            </div>
+        </div>
+
+        <div class="col-12 md:col-4 mb-4 md:mb-0">
+            <div class="flex flex-column align-items-center gap-3">
+                <div class="w-4rem h-4rem border-circle bg-red-900/20 flex align-items-center justify-content-center text-red-500 mb-2 shadow-2">
+                    <i class="pi pi-shield text-2xl"></i>
+                </div>
+                <h3 class="text-white text-lg font-bold m-0">Garantía Asegurada</h3>
+                <p class="text-gray-500 m-0 text-sm max-w-18rem">Productos 100% originales con respaldo.</p>
+            </div>
+        </div>
+
+        <div class="col-12 md:col-4">
+            <div class="flex flex-column align-items-center gap-3">
+                <div class="w-4rem h-4rem border-circle bg-red-900/20 flex align-items-center justify-content-center text-red-500 mb-2 shadow-2">
+                    <i class="pi pi-whatsapp text-2xl"></i>
+                </div>
+                <h3 class="text-white text-lg font-bold m-0">Asesoría Experta</h3>
+                <p class="text-gray-500 m-0 text-sm max-w-18rem">Te ayudamos a elegir el repuesto exacto.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="relative py-8 overflow-hidden flex align-items-center justify-content-center" style="min-height: 50vh;">
+    <div class="absolute top-0 left-0 w-full h-full z-0">
+        <img src=""
+             class="w-full h-full object-cover opacity-40 grayscale" alt="Taller Moto">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-black-alpha-50 to-transparent"></div>
+    </div>
+
+    <div class="z-1 text-center px-4 relative">
+        <h2 class="font-display text-4xl md:text-6xl text-white italic mb-2">
+            NO ENCUENTRAS <span class="text-red-600">TU REPUESTO?</span>
+        </h2>
+        <p class="text-gray-300 text-xl mb-6 max-w-40rem mx-auto">
+            Importamos accesorios exclusivos bajo pedido. Escríbenos y lo conseguimos para ti.
+        </p>
+        <button pButton label="COTIZAR PEDIDO ESPECIAL" icon="pi pi-box"
+                class="p-button-rounded p-button-lg p-button-danger font-bold px-5 py-3 shadow-6 hover:scale-110 transition-transform">
+        </button>
+    </div>
 </section>
