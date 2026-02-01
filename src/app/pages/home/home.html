@@ -144,22 +144,30 @@
     </div>
 </section>
 
-<section class="relative py-8 overflow-hidden flex align-items-center justify-content-center" style="min-height: 50vh;">
+<section class="relative w-full overflow-hidden flex align-items-center justify-content-center py-6 md:py-8"
+         style="min-height: 25rem;">
+
     <div class="absolute top-0 left-0 w-full h-full z-0">
-        <img src=""
-             class="w-full h-full object-cover opacity-40 grayscale" alt="Taller Moto">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-black-alpha-50 to-transparent"></div>
+        <img src="imagen/motos.png"
+             class="w-full h-full object-cover object-center"
+             alt="Taller Moto">
+
+        <div class="absolute top-0 left-0 w-full h-full bg-black-alpha-70"></div>
     </div>
 
-    <div class="z-1 text-center px-4 relative">
-        <h2 class="font-display text-4xl md:text-6xl text-white italic mb-2">
-            NO ENCUENTRAS <span class="text-red-600">TU REPUESTO?</span>
+    <div class="z-1 text-center px-4 relative w-full">
+
+        <h2 class="font-display text-3xl md:text-6xl text-white italic mb-3 line-height-tight">
+            NO ENCUENTRAS <br class="block md:hidden">
+            <span class="text-red-500">TU REPUESTO?</span>
         </h2>
-        <p class="text-gray-300 text-xl mb-6 max-w-40rem mx-auto">
-            Importamos accesorios exclusivos bajo pedido. Escríbenos y lo conseguimos para ti.
+
+        <p class="text-gray-300 text-sm md:text-xl mb-5 max-w-40rem mx-auto line-height-3">
+            Importamos accesorios exclusivos bajo pedido. <br class="hidden md:block"> Escríbenos y lo conseguimos para ti.
         </p>
+
         <button pButton label="COTIZAR PEDIDO ESPECIAL" icon="pi pi-box"
-                class="p-button-rounded p-button-lg p-button-danger font-bold px-5 py-3 shadow-6 hover:scale-110 transition-transform">
+                class="p-button-rounded p-button-danger font-bold px-4 py-3 w-full md:w-auto shadow-6 border-none">
         </button>
     </div>
 </section>
