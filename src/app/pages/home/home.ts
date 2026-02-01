@@ -14,33 +14,33 @@ export class Home {
   // DATOS ACTUALIZADOS: Imágenes PNG transparentes de alta calidad
   products = [
     {
-      name: 'Casco AGV Pista GP RR', // Nombre más pro
-      category: 'Protección',
+      name: 'Portacelular para moto', // Nombre más pro
+      category: 'Portacelular',
       // Imagen transparente (sin fondo blanco)
-      image: 'imagen/casco.jpg',
-      price: 4500.00,
-      badge: 'PREMIUM'
-    },
-    {
-      name: 'Guantes Alpinestars SP-8 v3',
-      category: 'Indumentaria',
-      image: 'imagen/casco.jpg',
-      price: 420.00,
+      image: 'imagen/Portacelular para moto.jpg',
+      price: 50.00,
       badge: 'NUEVO'
     },
     {
-      name: 'Motul 7100 10W40 4T',
-      category: 'Mantenimiento',
+      name: 'Faro neblinero',
+      category: 'Indumentaria',
+      image: 'imagen/Faro neblinero.jpg',
+      price: 35.00,
+      badge: 'NUEVO'
+    },
+    {
+      name: 'Candado para moto',
+      category: 'Candado',
       // La botella ahora se ve limpia, sin el recuadro blanco
-      image: 'imagen/casco.jpg',
-      price: 280.00,
+      image: 'imagen/Candado para moto.jpg',
+      price: 20.00,
       badge: 'OFERTA'
     },
     {
-      name: 'Escape Akrapovic Slip-On',
+      name: 'EXPLORADORA LED 3X3',
       category: 'Repuestos',
-      image: 'imagen/casco.jpg',
-      price: 3200.00,
+      image: 'imagen/EXPLORADORA LED 3X3.jpg',
+      price: 130.00,
       badge: ''
     }
   ];
