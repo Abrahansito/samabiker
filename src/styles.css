@@ -85,30 +85,30 @@ body {
    PERSONALIZACIÓN DEL SCROLLBAR (BARRA DE SCROLL)
    ========================================= */
 
-/* 1. Ancho de la barra */
+/*Ancho de la barra */
 ::-webkit-scrollbar {
     width: 10px; /* Ni muy grueso ni muy delgado */
 }
 
-/* 2. El "riel" o fondo de la barra (Lo ponemos negro) */
+/* El "riel" o fondo de la barra (Lo ponemos negro) */
 ::-webkit-scrollbar-track {
     background: #0a0a0a;
 }
 
-/* 3. La "barra" que se mueve (Gris oscuro elegante) */
+/* La "barra" que se mueve (Gris oscuro elegante) */
 ::-webkit-scrollbar-thumb {
     background: #333333;
     border-radius: 5px; /* Bordes redondeados */
     border: 2px solid #0a0a0a; /* Pequeño margen para que se vea flotante */
 }
 
-/* 4. Efecto al pasar el mouse por la barra (Se pone ROJA) */
+/* Efecto al pasar el mouse por la barra (Se pone ROJA) */
 /* Esto le da un toque de marca increíble */
 ::-webkit-scrollbar-thumb:hover {
     background: #d71f27;
 }
 
-/* 5. Compatibilidad con Firefox */
+/*Compatibilidad con Firefox */
 html {
     scrollbar-width: thin;
     scrollbar-color: #333333 #0a0a0a; /* Barra - Fondo */

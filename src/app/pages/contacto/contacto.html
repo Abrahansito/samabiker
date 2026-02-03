@@ -1,0 +1,89 @@
+<div class="min-h-screen bg-black-alpha-90 py-8 px-4 md:px-8 animation-duration-500 fadein">
+
+    <div class="text-center mb-8 pt-6">
+        <h1 class="font-display text-4xl md:text-6xl text-white italic m-0">
+            CONTÁCTANOS
+        </h1>
+        <p class="text-gray-400 mt-2 text-lg">Estamos listos para equipar tu aventura</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="col-12 md:col-5 mb-6 md:mb-0 md:pr-6">
+            <h2 class="text-white text-2xl font-bold mb-4 border-bottom-1 border-red-600 inline-block pb-2">Información</h2>
+
+            <div class="flex flex-column gap-5 mt-4">
+
+                <div class="flex align-items-start gap-3">
+                    <div class="w-3rem h-3rem bg-gray-800 border-circle flex align-items-center justify-content-center text-red-500">
+                        <i class="pi pi-map-marker text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-bold m-0 mb-1">Ubicación</h3>
+                        <p class="text-gray-400 m-0 line-height-3">Av. Los Motores 123, Chiclayo, Perú.<br>(Frente al centro comercial)</p>
+                    </div>
+                </div>
+
+                <div class="flex align-items-start gap-3">
+                    <div class="w-3rem h-3rem bg-gray-800 border-circle flex align-items-center justify-content-center text-red-500">
+                        <i class="pi pi-whatsapp text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-bold m-0 mb-1">WhatsApp / Llamadas</h3>
+                        <p class="text-gray-400 m-0">+51 987 654 321</p>
+                        <p class="text-gray-500 text-sm m-0">Lunes a Sábado: 9am - 7pm</p>
+                    </div>
+                </div>
+
+                <div class="flex align-items-start gap-3">
+                    <div class="w-3rem h-3rem bg-gray-800 border-circle flex align-items-center justify-content-center text-red-500">
+                        <i class="pi pi-envelope text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-lg font-bold m-0 mb-1">Correo</h3>
+                        <p class="text-gray-400 m-0">ventas@samabikers.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-12 md:col-7">
+            <div class="bg-gray-900 p-5 border-round-2xl border-1 border-gray-800 shadow-8">
+                <h2 class="text-white text-2xl font-bold mb-4">Envíanos un mensaje</h2>
+
+                <div class="grid p-fluid">
+                    <div class="col-12 md:col-6 mb-3">
+                        <label class="text-gray-300 block mb-2">Nombre Completo</label>
+                        <input #nombre type="text" pInputText placeholder="Tu nombre" class="bg-gray-800 border-gray-700 text-white">
+                    </div>
+
+                    <div class="col-12 md:col-6 mb-3">
+                        <label class="text-gray-300 block mb-2">Celular</label>
+                        <input type="text" pInputText placeholder="999999999" class="bg-gray-800 border-gray-700 text-white">
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        <label class="text-gray-300 block mb-2">¿En qué podemos ayudarte?</label>
+                        <textarea #mensaje pInputTextarea rows="5" placeholder="Busco un repuesto para..." class="bg-gray-800 border-gray-700 text-white"></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <button pButton label="ENVIAR MENSAJE" icon="pi pi-send"
+                                (click)="sendMessage(nombre.value, mensaje.value)"
+                                class="p-button-danger font-bold py-3 w-full">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-8 border-round-xl overflow-hidden shadow-8 border-1 border-gray-800" style="height: 400px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.755938456885!2d-79.845371!3d-6.771372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef02a5c9a759%3A0x26c0422c5e505777!2sChiclayo!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</div>
