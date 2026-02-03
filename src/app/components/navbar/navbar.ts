@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router'; //Necesario para routerLink
 import { ButtonModule } from 'primeng/button';
 import { DrawerModule } from 'primeng/drawer';
 import { BadgeModule } from 'primeng/badge'; //Agregamos Badge para el carrito
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,9 @@ import { BadgeModule } from 'primeng/badge'; //Agregamos Badge para el carrito
     RouterModule,
     ButtonModule,
     DrawerModule,
-    BadgeModule
+    BadgeModule,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',

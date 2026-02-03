@@ -8,11 +8,11 @@
 </a>
 
     <div class="hidden md:flex align-items-center gap-5">
-        <a routerLink="/" fragment="home" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">INICIO</a>
-        <a routerLink="/catalogo" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">CATÁLOGO</a>
-        <a routerLink="/contacto" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">CONTACTO</a>
+        <a routerLink="/" fragment="home" routerLinkActive="link-activo" [routerLinkActiveOptions]="{exact: true}" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">INICIO</a>
+        <a routerLink="/catalogo" routerLinkActive="link-activo" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">CATÁLOGO</a>
+        <a routerLink="/contacto" routerLinkActive="link-activo" class="text-white hover:text-red-500 font-medium no-underline transition-colors text-sm tracking-wider">CONTACTO</a>
 
-        <button pButton label="COTIZAR AHORA" class="p-button-danger skew-box border-none"></button>
+        <button pButton label="COTIZAR AHORA" routerLink="/contacto" class="p-button-danger skew-box border-none"></button>
     </div>
 
     <button pButton icon="pi pi-bars"
@@ -45,6 +45,7 @@
         </a>
 
         <button pButton label="COTIZAR AHORA"
+                routerLink="/contacto"
                 class="p-button-danger w-9 p-3 text-xl font-bold border-round-3xl mt-4 shadow-4">
         </button>
 
