@@ -5,11 +5,13 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox'; //Para filtros
 import { InputTextModule } from 'primeng/inputtext'; //Para barra de búsqueda
 import { TagModule } from 'primeng/tag';
+import { PRODUCTS } from '../../data/products.data';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonModule, CheckboxModule, InputTextModule, TagModule],
+  imports: [CommonModule, FormsModule, ButtonModule, CheckboxModule, InputTextModule, TagModule, RouterLink],
   templateUrl: './catalogo.html',
   styleUrl: './catalogo.css'
 })
@@ -31,36 +33,7 @@ export class Catalogo{
   ];
 
   //Lista completa de productos (simulada)
-  products = [
-    {
-      name: 'Portacelular para moto',
-      category: 'Portacelular',
-      image: 'imagen/Portacelular para moto.jpg',
-      price: 50.00,
-      badge: 'NUEVO'
-    },
-    {
-      name: 'Faro neblinero',
-      category: 'Indumentaria',
-      image: 'imagen/Faro neblinero.jpg',
-      price: 35.00,
-      badge: 'NUEVO'
-    },
-    {
-      name: 'Candado para moto',
-      category: 'Mantenimiento',
-      image: 'imagen/Candado para moto.jpg',
-      price: 20.00,
-      badge: 'OFERTA'
-    },
-    {
-      name: 'EXPLORADORA LED 3X3',
-      category: 'Repuestos',
-      image: 'imagen/EXPLORADORA LED 3X3.jpg',
-      price: 130.00,
-      badge: ''
-    }
-  ];
+  products = PRODUCTS;
 
   //Función para abrir/cerrar
   toggleMobileFilters() {

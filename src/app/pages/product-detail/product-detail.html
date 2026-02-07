@@ -1,0 +1,61 @@
+<div class="min-h-screen bg-black-alpha-90 py-8 px-4 md:px-8 animation-duration-500 fadein"><br><br>
+    <button pButton icon="pi pi-arrow-left" label="Volver al Catálogo"
+            routerLink="/catalogo"
+            class="p-button-text p-button-secondary text-gray-400 mb-5 pl-0 hover:text-red">
+    </button>
+
+    <div class="grid" *ngIf="product">
+
+        <div class="col-12 md:col-6 md:pr-6">
+
+            <div class="w-full h-20rem md:h-30rem border-round-2xl overflow-hidden bg-gray-900 mb-3 flex align-items-center justify-content-center border-1 border-gray-800 relative">
+                 <p-tag *ngIf="product.badge" [value]="product.badge" severity="danger" class="absolute top-0 left-0 m-3 z-2 text-lg px-3"></p-tag>
+                <img [src]="selectedImage" [alt]="product.name" class="max-w-full max-h-full object-contain animation-duration-300 fadein">
+            </div>
+
+            <div class="flex gap-3 overflow-x-auto pb-2">
+                <div *ngFor="let img of product.images"
+                     (click)="selectedImage = img"
+                     class="w-5rem h-5rem border-round-lg cursor-pointer border-2 transition-all overflow-hidden flex align-items-center justify-content-center bg-gray-900"
+                     [class.border-red-500]="selectedImage === img"
+                     [class.border-transparent]="selectedImage !== img">
+                    <img [src]="img" class="w-full h-full object-cover opacity-80 hover:opacity-100">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 md:col-6 text-white pt-4 md:pt-0">
+            <span class="text-red-500 font-bold tracking-wider uppercase mb-2 block">{{ product.category }}</span>
+            <h1 class="text-4xl md:text-5xl m-0 mb-3">{{ product.name }}</h1>
+
+            <p class="text-3xl font-bold text-white mb-4">S/ {{ product.price }}</p>
+
+            <div class="border-top-1 border-gray-800 my-4"></div>
+
+            <h3 class="text-xl font-bold mb-2">Descripción</h3>
+            <p class="text-gray-400 line-height-3 mb-4 text-lg">
+                {{ product.description }}
+            </p>
+
+            <div class="bg-gray-900 p-4 border-round-xl mb-5 border-1 border-gray-800">
+                <h3 class="text-white text-lg font-bold mb-3 mt-0">Especificaciones:</h3>
+                <ul class="list-none p-0 m-0">
+                    <li *ngFor="let feature of product.features" class="flex align-items-center mb-2 text-gray-300">
+                        <i class="pi pi-check-circle text-red-500 mr-2"></i>
+                        {{ feature }}
+                    </li>
+                </ul>
+            </div>
+
+            <button pButton label="COMPRAR AHORA EN WHATSAPP" icon="pi pi-whatsapp"
+                    (click)="buyOnWhatsApp()"
+                    class="w-full p-button-success font-bold text-xl py-3 shadow-4 hover:scale-105 transition-transform duration-300">
+            </button>
+
+            <p class="text-center text-gray-500 text-sm mt-3">
+                <i class="pi pi-shield mr-1"></i> Compra 100% segura y garantizada.
+            </p>
+        </div>
+
+    </div>
+</div>

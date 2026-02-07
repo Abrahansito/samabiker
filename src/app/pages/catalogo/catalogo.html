@@ -53,13 +53,13 @@
                 <div class="col-6 md:col-4 p-2" *ngFor="let product of visibleProducts">
 
                     <div class="product-card p-3 border-round-2xl h-full flex flex-column justify-content-between relative overflow-hidden group cursor-pointer"
-                         style="background: #111; border: 1px solid rgba(255,255,255,0.05);">
+                         style="background: #111; border: 1px solid rgba(255,255,255,0.05);" [routerLink]="['/producto', product.id]">
 
                         <p-tag *ngIf="product.badge" [value]="product.badge" severity="danger" class="absolute top-0 left-0 m-2 z-2 text-xs font-bold"></p-tag>
 
                         <div class="relative w-full h-10rem md:h-14rem mb-3 border-round-xl overflow-hidden flex align-items-center justify-content-center z-1 p-2"
                              style="background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%);">
-                            <img [src]="product.image" [alt]="product.name" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+                            <img [src]="product.images[0]" [alt]="product.name" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
                         </div>
 
                         <div class="z-1 px-1 flex-grow-1">
